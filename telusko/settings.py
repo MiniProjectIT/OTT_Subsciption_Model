@@ -181,21 +181,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
 # EMAIL_PAGE_DOMAIN = 'http://mydomain.com/'
 
-# # For Django Email Backend
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'hitanshuparekh72@student.sfit.ac.in'
-# EMAIL_HOST_PASSWORD = 'hitanshu72'  # os.environ['password_key'] suggested
-# EMAIL_USE_TLS = True
 
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vedantkadam@student.sfit.ac.in'
-EMAIL_HOST_PASSWORD = 'bf#U37!9%OE*'
+EMAIL_HOST_USER = 'kadamvedant122@gmail.com'
+EMAIL_HOST_PASSWORD = 'usbmfeqkrzmersct'
 # EMAIL_ACTIVE_FIELD = 'is_active'
 
 # django_heroku.settings(locals())
