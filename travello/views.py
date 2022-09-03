@@ -17,14 +17,19 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, 'index.html')
 
+def services(request):
+    return render(request, 'services.html')
+
+def services_d(request):
+    return render(request, 'service-details.html')
 
 def about(request):
     return render(request, 'about.html')
 
-def services(request):
+# def services(request):
 
-    dests = Destination.objects.all()
-    return render(request, 'destinations.html', {'dests': dests})
+#     dests = Destination.objects.all()
+#     return render(request, 'destinations.html', {'dests': dests})
 
 
 def contact(request):
