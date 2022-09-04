@@ -7,6 +7,9 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('services', views.services, name="services"),
     path('services_d', views.services_d, name="services_d"),
+
+    path("e/<str:ott_url>/", views.single_ott, name="plans"),
+
     path('contact', views.contact, name="contact"),
     path('destination_details/<int:id>', views.destination_details, name='destination_details'),
     path('booking/<int:id>', views.booking, name="booking"),
@@ -16,5 +19,6 @@ urlpatterns = [
     path('orderHistory', views.orderHistory, name="orderHistory"),
     path('email/', include(email_urls)),
     path('delete_destination/<int:id>', views.delete_destination, name="delete_destination"),
+    path('plans/', views.plans),
     # path('sortBy', views.sortBy, name="sortBy"),
 ]

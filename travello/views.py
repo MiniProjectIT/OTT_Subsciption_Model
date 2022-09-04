@@ -11,6 +11,7 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.http import Http404
 
 # Create your views here.
 
@@ -255,3 +256,14 @@ def delete_destination(request, id):
 
 
         return redirect('orderHistory')
+
+
+def plans(request):
+    plans= ott_plans.objects.all().order_by('-createdTime')
+    return render(request, 'services.html', {'plans':plans})
+
+def single_ott(request, ott_url):
+    if ott_plans.objects.filter(url=ott_url).exists():
+        return render(request, "service-details.html", {"plans": ott_plans.objects.get(url=ott_url)})
+    else:
+        raise Http404("No such Event exists")

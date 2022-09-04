@@ -60,3 +60,19 @@ class ConfirmBooking(models.Model):
 
     def __str__(self):
         return self.fullName
+
+class ott_plans(models.Model):
+    url = models.CharField(max_length=200, unique=True, default="", verbose_name="URL (auto generated. Don't touch)")
+    name=models.CharField(max_length=100,default="")
+    description=models.CharField(max_length=100,default="")
+    images=models.ImageField(upload_to='pics')
+    f1 = models.CharField(max_length=100)
+    f2 = models.CharField(max_length=100)
+    f3 = models.CharField(max_length=100)
+    f4 = models.CharField(max_length=100)
+    added_desc=models.CharField(max_length=300)
+    createdTime = models.DateTimeField(auto_now_add=True)
+    updatedTime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
