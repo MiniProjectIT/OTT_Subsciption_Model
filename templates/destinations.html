@@ -238,7 +238,22 @@
             </div>
         </div>
     </div>
+    <div class="row gy-4">
+        {% for plans in plans %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+         
+          <div class="card">
+            <div class="card-img">
+              <img src= {{plans.images.url}} alt="" class="img-fluid">
+            </div>
+            <h3><a href="/e/{{plans.url}}" class="stretched-link">{{plans.name}}</a></h3>
+            <p> {{plans.added_desc}}</p>
+          </div>
+          
+        </div><!-- End Card Item -->
+        {% endfor %}
 
+      </div>
     <!-- Footer -->
 
     <footer class="footer">

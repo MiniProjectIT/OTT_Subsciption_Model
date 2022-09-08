@@ -19,7 +19,10 @@ def index(request):
     return render(request, 'index.html')
 
 def services(request):
-    return render(request, 'services.html')
+    net= netflix.objects.all().order_by('-createdTime')
+    ama = amazon.objects.all().order_by('-createdTime')
+    hot = hotstar.objects.all().order_by('-createdTime')
+    return render(request, 'services.html', {'netflix': net,'amazon':ama,'hotstar':hot})
 
 def services_d(request):
     return render(request, 'service-details.html')
@@ -28,7 +31,6 @@ def about(request):
     return render(request, 'about.html')
 
 def test(request):
-
     dests = Destination.objects.all()
     return render(request, 'destinations.html', {'dests': dests})
 

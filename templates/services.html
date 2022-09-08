@@ -33,7 +33,9 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet"> -->
 
   <!-- Template Main CSS File -->
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'assets/css/news.css' %}"> -->
   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+  
   <!-- <link href="assets/css/main.css" rel="stylesheet"> -->
 
   <!-- =======================================================
@@ -53,36 +55,28 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Logis</h1>
+        <h1>OTT Subscription Model</h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/plans">Plans</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="test">testing</a></li>
+          <li><a href="/accounts/logout">Logout</a></li>
+          <li><a class="get-a-quote" href="/">Hello, {{user.first_name}}</a></li>
+          {% else %}
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/accounts/login">Login</a></li>
+          <li><a href="/accounts/login">Register</a></li>
+          <li><a href="/plans">Plans</a></li>
+          <li><a href="test">testing</a></li>
           <li><a class="get-a-quote" href="get-a-quote.html">Get a Quote</a></li>
+          {% endif %}
         </ul>
       </nav><!-- .navbar -->
 
@@ -158,13 +152,81 @@
  
       <div class="container" data-aos="fade-up">
 
+     
+
+        </div>
+        {% if request.get_full_path == "/services" %}
+        <section id="service" class="services pt-0">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-header">
+              <span>Neflix shows</span>
+              <h2>Netflix shows</h2>
+            <div class="row gy-4">
+              {% for net in netflix %}
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+               
+                <div class="card">
+                  <div class="card-img">
+                    <img src= {{net.images.url}} alt="" class="img-fluid">
+                  </div>
+                  <h3><a href="/e/{{description.url}}" class="stretched-link">{{net.name}}</a></h3>
+                  <p> {{net.description}}</p>
+                </div>
+                
+              </div><!-- End Card Item -->
+              {% endfor %}
+              
+            </div>
+
+            <div class="row gy-4">
+              <span>Amazon shows</span>
+              <h2>Amazon shows</h2>
+              {% for ama in amazon %}
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+               
+                <div class="card">
+                  <div class="card-img">
+                    <img src= {{ama.images.url}} alt="" class="img-fluid">
+                  </div>
+                  <h3><a href="/e/{{description.url}}" class="stretched-link">{{ama.name}}</a></h3>
+                  <p> {{ama.description}}</p>
+                </div>
+                
+              </div><!-- End Card Item -->
+              {% endfor %}
+              
+            </div>
+
+
+            <div class="row gy-4">
+              <span>Hotstar shows</span>
+              <h2>Hotstar shows</h2>
+              {% for hot in hotstar %}
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+               
+                <div class="card">
+                  <div class="card-img">
+                    <img src= {{hot.images.url}} alt="" class="img-fluid">
+                  </div>
+                  <h3><a href="/services" class="stretched-link">{{hot.name}}</a></h3>
+                  <p> {{hot.description}}</p>
+                </div>
+                
+              </div><!-- End Card Item -->
+              {% endfor %}
+              
+            </div>
+         
+          
+          </div>
+    
+          </div>
+        </section><!-- End Services Section -->
+        {% else %}
         <div class="section-header">
           <span>Our Plans</span>
           <h2>Our Plans</h2>
-
-        </div>
-
-      
         <div class="row gy-4">
           {% for plans in plans %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -179,7 +241,7 @@
             
           </div><!-- End Card Item -->
           {% endfor %}
-
+          {% endif %}
         </div>
      
       
@@ -265,7 +327,7 @@
       </div>
     </div>
 
-  </footer><!-- End Footer -->
+  </footer>End Footer
   <!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

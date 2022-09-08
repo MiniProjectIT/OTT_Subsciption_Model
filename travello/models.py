@@ -76,3 +76,39 @@ class ott_plans(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class netflix(models.Model):
+    name=models.CharField(max_length=100,default="")
+    description=models.CharField(max_length=100,default="")
+    images=models.ImageField(upload_to='netflix')
+    ratings=models.CharField(max_length=100,default="")
+    createdTime = models.DateTimeField(auto_now_add=True)
+    updatedTime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class amazon(models.Model):
+    name=models.CharField(max_length=100,default="")
+    description=models.CharField(max_length=100,default="")
+    images=models.ImageField(upload_to='amazon')
+    ratings=models.CharField(max_length=100,default="")
+    createdTime = models.DateTimeField(auto_now_add=True)
+    updatedTime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class hotstar(models.Model):
+    name=models.CharField(max_length=100,default="")
+    description=models.CharField(max_length=100,default="")
+    images=models.ImageField(upload_to='hotstar')
+    ratings=models.CharField(max_length=100,default="")
+    createdTime = models.DateTimeField(auto_now_add=True)
+    updatedTime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name

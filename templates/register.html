@@ -61,49 +61,6 @@
 
         <!-- Header -->
 
-        <header class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-                                <div class="logo"><a href="/">Tripology</a></div>
-                                <nav class="main_nav">
-                                    <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/">Home</a></li>
-                                        <li><a href="/about">About Us</a></li>
-                                        <li><a href="/services">Services</a></li>
-                                        <li><a href="/contact">Contact</a></li>
-                                        {% if user.is_authenticated %}
-                                        <li>
-                                            <h4>Hello, {{user.first_name}}</h4>
-                                        </li>
-                                        <li><a href="logout">Logout</a></li>
-                                        {% else %}
-                                        <li class="active"><a href="register">Register</a></li>
-                                        <li><a href="login">Login</a></li>
-                                        {% endif %}
-                                    </ul>
-                                </nav>
-
-                                <!-- Hamburger -->
-
-                                <div class="hamburger ml-auto">
-                                    <i class="fa fa-bars" aria-hidden="true"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header_social d-flex flex-row align-items-center justify-content-start">
-                <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </header>
 
         <!-- Menu -->
 
