@@ -75,84 +75,10 @@
                                                                 </td>
                                                             </tr>
 
-                                                            <tr style="line-height: 2.0">
-
-                                                                <td>From:</td>
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.from_city}}"
-                                                                           readonly
-                                                                           name="fromCity"
-                                                                           style="border: none; direction:rtl; width: 200px ">
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>To:</td>
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.to_city}}"
-                                                                           readonly
-                                                                           name="toCity"
-                                                                           style="border: none; direction:rtl; width: 200px">
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>Depature Date:</td>
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.depature_date}}"
-                                                                           readonly
-                                                                           name="depatureDate"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>Days:</td>
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.day}}"
-                                                                           readonly name="days"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td><b>Passengers Details:</b>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>Number of Rooms:</td>
-
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.no_of_rooms}}"
-                                                                           readonly
-                                                                           name="noOfRooms"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>Number of Adults:</td>
-
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.no_of_adults}}"
-                                                                           readonly
-                                                                           name="noOfAdults"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-
-                                                            </tr>
-                                                            <tr style="line-height: 2.0">
-                                                                <td>Number of Children:</td>
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{request.session.no_of_children}}"
-                                                                           readonly
-                                                                           name="noOfChildren"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-                                                            </tr>
+                                                           
+                                                         
+                                                          
+                                                        
                                                             <tr style="line-height: 2.0">
                                                                 <td>Email:</td>
 
@@ -175,7 +101,7 @@
                                                                            style="border: none; direction:rtl ">
                                                                 </td>
                                                             </tr>
-                                                            <tr style="line-height: 2.0">
+                                                            <!-- <tr style="line-height: 2.0">
                                                                 <td>Amount Per Person:</td>
                                                                 <td class="alignright">
                                                                     <input type="text"
@@ -184,11 +110,11 @@
                                                                            name="amountPerPerson"
                                                                            style="border: none; direction:rtl ">
                                                                 </td>
-                                                            </tr>
+                                                            </tr> -->
                                                             <tr style="line-height: 2.0">
                                                                 <td><strong>Total Amount:</strong>
                                                                 </td>
-                                                                {% if confirmation %}
+                                                                
                                                                 <td class="alignright">
                                                                     <input type="text"
                                                                            value="{{request.session.price}}"
@@ -196,15 +122,7 @@
                                                                            name="totalAmount"
                                                                            style="border: none; direction:rtl ">
                                                                 </td>
-                                                                {% else %}
-                                                                <td class="alignright">
-                                                                    <input type="text"
-                                                                           value="{{totalCost}}"
-                                                                           readonly
-                                                                           name="totalAmount"
-                                                                           style="border: none; direction:rtl ">
-                                                                </td>
-                                                                {% endif %}
+                                                                
                                                             </tr>
 
                                                             </tbody>

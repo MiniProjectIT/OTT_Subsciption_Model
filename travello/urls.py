@@ -7,7 +7,7 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('services', views.services, name="services"),
     path('services_d', views.services_d, name="services_d"),
-
+    path('test', views.test, name="test"),
     path("e/<str:ott_url>/", views.single_ott, name="plans"),
 
     path('contact', views.contact, name="contact"),

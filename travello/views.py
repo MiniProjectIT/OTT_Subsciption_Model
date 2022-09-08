@@ -27,10 +27,10 @@ def services_d(request):
 def about(request):
     return render(request, 'about.html')
 
-# def services(request):
+def test(request):
 
-#     dests = Destination.objects.all()
-#     return render(request, 'destinations.html', {'dests': dests})
+    dests = Destination.objects.all()
+    return render(request, 'destinations.html', {'dests': dests})
 
 
 def contact(request):
@@ -81,54 +81,19 @@ def booking(request, id):
 
     if request.method == 'POST':
         firstName = request.POST['firstName']
-        lastName = request.POST['lastName']
-        fromCity = request.POST['fromCity']
-        toCity = request.POST['toCity']
-        depatureDate = request.POST['depatureDate']
-        days = request.POST['days']
-        noOfRooms = int(request.POST['noOfRooms'])
-        noOfAdults = int(request.POST['noOfAdults'])
-        noOfChildren = int(request.POST['noOfChildren'])
+        
         email = request.POST['email']
         phoneNo = request.POST['phoneNo']
         totalAmount = int(request.POST['totalAmount'])
 
         request.session['fname'] = firstName
-        request.session['lname'] = lastName
-        request.session['to_city'] = toCity
-        request.session['from_city'] = fromCity
-        request.session['depature_date'] = depatureDate
-        request.session['arrival_date'] = days
-        request.session['no_of_rooms'] = noOfRooms
-        request.session['no_of_adults'] = noOfAdults
-        request.session['no_of_children'] = noOfChildren
+    
         request.session['email'] = email
         request.session['phone_no'] = phoneNo
         request.session['total_amount'] = totalAmount
 
-        requiredRooms = 1
-        if noOfAdults/3 > 1:
-            requiredRooms = math.ceil(noOfAdults/3)
+      
 
-        if noOfRooms < requiredRooms:
-            noOfRooms = requiredRooms - noOfRooms
-            messages.info(request, 'For adding more travellers, Please add' + str(noOfRooms) +' more rooms')
-            return redirect('booking', id)
-
-        if noOfRooms > noOfAdults:
-            messages.info(request, 'Minimum 1 Adult is required per Room')
-            return redirect('booking', id)
-
-        if (noOfAdults + noOfChildren)/4 > 1:
-            requiredRooms = math.ceil((noOfAdults + noOfChildren)/4)
-
-        if noOfRooms < requiredRooms:
-            noOfRooms = requiredRooms - noOfRooms
-            messages.info(request, 'For adding more travellers, Please add'+ str(noOfRooms) + 'more rooms')
-            return redirect('booking',id)
-
-        noOfRooms = requiredRooms
-        request.session['no_of_rooms'] = noOfRooms
         # print("No of rooms = ", noOfRooms)
         # print("Working")
         # book = Booking(firstName=firstName, lastName=lastName, fromCity=fromCity, toCity=toCity, depatureDate=depatureDate, arrivalDate=arrivalDate, noOfRooms=noOfRooms, noOfAdults=noOfAdults, noOfChildren=noOfChildren, email=email,phoneNo=phoneNo, totalAmount=totalAmount)
@@ -147,19 +112,20 @@ def receipt(request):
 
     tour_amount = int(request.session.get('total_amount')) #Per person
     # print(tour_amount)
-    adults = int(request.session.get('no_of_adults'))
+    # adults = int(request.session.get('no_of_adults'))
     # print(adults)
-    rooms = int(request.session.get('no_of_rooms'))
-    # print(rooms)
-    children = int(request.session.get('no_of_children'))
+  
+    # rooms = int(request.session.get('no_of_rooms'))
+    # # print(rooms)
+    # children = int(request.session.get('no_of_children'))
     # print(adults)
-    if rooms > 1:
-        totalCost = tour_amount*adults + tour_amount*children/2 + rooms*tour_amount/4
-    else:
+    # if rooms > 1:
+    #     totalCost = tour_amount*adults + tour_amount*children/2 + rooms*tour_amount/4
+    # else:
 
-        totalCost = tour_amount*adults + tour_amount*children/2
+    #     totalCost = tour_amount*adults + tour_amount*children/2
 
-    request.session['total_amount'] =str(totalCost)
+    # request.session['total_amount'] =str(totalCost)
 
     # print(totalCost)
     request.session['total_amount'] = tour_amount
@@ -168,7 +134,7 @@ def receipt(request):
 
     t = time.localtime()
     currentTime = time.strftime("%H:%M:%S", t)
-    return render(request,'receipt.html',{'totalCost':totalCost, 'date':today, 'currentTime':currentTime})
+    return render(request,'receipt.html',{ 'date':today, 'currentTime':currentTime})
 
 
 
@@ -192,27 +158,16 @@ def search(request):
 def confirm_booking(request):
     if request.method == 'POST':
         fullName = request.POST['fullName']
-        fromCity = request.POST['fromCity']
-        toCity = request.POST['toCity']
-        depatureDate = request.POST['depatureDate']
-        arrivalDate = request.POST['days']
-        noOfRooms= int(request.POST['noOfRooms'])
-        noOfAdults  = int(request.POST['noOfAdults'])
-        noOfChildren = int(request.POST['noOfChildren'])
         email = request.POST['email']
         phoneNo = request.POST['phoneNo']
-        amountPerPerson = request.POST['amountPerPerson']
-        totalAmount = float(request.POST['totalAmount'])
         userName = request.user.username
 
 
-        books = ConfirmBooking(fullName=fullName, fromCity=fromCity, toCity=toCity,
-                       depatureDate=depatureDate, days=arrivalDate, noOfRooms=noOfRooms, noOfAdults=noOfAdults,
-                       noOfChildren=noOfChildren, email=email, phoneNo=phoneNo, amountPerPerson=amountPerPerson,
-                       totalAmount=totalAmount, userName=userName)
+        books = ConfirmBooking(fullName=fullName, userName=userName,email=email,phoneNo=phoneNo)
         books.save()
 
-        message = render_to_string('order_placed_body.html', {'fullName':fullName, 'fromCity':fromCity, 'toCity':toCity, 'depatureDate':depatureDate,'arrivalDate':arrivalDate,'noOfRooms':noOfRooms,'noOfAdults':noOfAdults,'noOfChildren':noOfChildren,'email':email,'phoneNo':phoneNo,'amountPerPerson':amountPerPerson, 'totalAmount':totalAmount})
+        message = render_to_string('order_placed_body.html', {'fullName':fullName,'email':email ,'phoneNo':phoneNo})
+        
         msg = EmailMessage(
             'Tripology',
             message,
