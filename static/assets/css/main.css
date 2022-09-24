@@ -15,6 +15,17 @@
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Poppins", sans-serif;
 }
+::-webkit-scrollbar{
+  width:10px;
+}
+::-webkit-scrollbar-track{
+  background:var(--color-bg);
+  border-radius:50px;
+}
+::-webkit-scrollbar-thumb{
+  background: #1522e0;
+  border-radius: 50px;
+}
 
 /* Colors */
 :root {
