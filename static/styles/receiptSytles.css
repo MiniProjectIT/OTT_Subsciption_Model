@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     font-size: 14px;
 }
@@ -20,6 +20,7 @@ body {
     width: 100% !important;
     height: 100%;
     line-height: 1.6;
+    background-color:#FFF;
 }
 
 /* Let's make sure all tables have defaults */
@@ -31,11 +32,11 @@ table td {
     BODY & CONTAINER
 ------------------------------------- */
 body {
-    background-color: #f6f6f6;
+    background-color: #FFF;
 }
 
 .body-wrap {
-    background-color: #f6f6f6;
+    background-color: #FFF;
     width: 100%;
 }
 

@@ -69,7 +69,7 @@ class ott_plans(models.Model):
     f1 = models.CharField(max_length=100)
     f2 = models.CharField(max_length=100)
     f3 = models.CharField(max_length=100)
-    f4 = models.CharField(max_length=100)
+    amt = models.IntegerField(default=999)
     added_desc=models.CharField(max_length=300)
     createdTime = models.DateTimeField(auto_now_add=True)
     updatedTime = models.DateTimeField(auto_now=True)

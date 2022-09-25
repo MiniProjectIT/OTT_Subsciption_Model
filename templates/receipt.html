@@ -20,7 +20,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <title>Receipt</title>
+    <title>OTT Subscription model</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-video-advertising-agency-flaticons-lineal-color-flat-icons-5.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis&family=Poppins&family=Satisfy&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +42,7 @@
     <table class="body-wrap">
         <tbody>
         <tr>
-            <td class="container" width="600">
+            <td style="padding-top: 80px" class="container" width="600">
 
                 <div id="content2" style="background: #fff;border-bottom: 1px solid #ffffff;">
                     <table class="main" width="100%" cellpadding="0" cellspacing="0">
@@ -52,7 +61,7 @@
                                             <table class="invoice">
                                                 <tbody>
                                                 <tr>
-                                                    <td>Tripology<br>
+                                                    <td>OTT Subscription Model<br>
                                                         Date: {{date}}<br>
                                                         Time: {{currentTime}}
                                                     </td>
@@ -117,7 +126,7 @@
                                                                 
                                                                 <td class="alignright">
                                                                     <input type="text"
-                                                                           value="{{ request.session.description }}"
+                                                                           value="{{ request.session.amt }}"
                                                                            readonly
                                                                            name="totalAmount"
                                                                            style="border: none; direction:rtl ">
@@ -139,7 +148,7 @@
 
                                     <tr>
                                         <td class="content-block">
-                                            Tripology, Mumbai, Borivali(West)
+                                            OTT Subscription Model
                                         </td>
                                     </tr>
                                     </tbody>
@@ -153,16 +162,13 @@
                 <div class="footer">
                     <table width="100%">
                         <tbody>
-                        <tr>
-                            <td class="aligncenter content-block">Questions? Email <a
-                                    href="mailto:">hitanshuparekh72@gmail.com</a></td>
-                        </tr>
+                       
                         </tbody>
                     </table>
 
                     <div class="d-flex justify-content-center">
                         <button id="cmd2" class="btn btn-success btn-lg">Confirm
-                            Booking
+                            Details
                         </button>
                     </div>
                 </div>

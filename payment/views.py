@@ -11,8 +11,9 @@ razorpay_client = razorpay.Client(
 
 
 def homepage(request):
+	amt = request.session['amt']
 	currency = 'INR'
-	amount = 60000 # Rs. 200
+	amount = amt*100 # Rs. 200
 
 	# Create a Razorpay Order
 	razorpay_order = razorpay_client.order.create(dict(amount=amount,
@@ -31,7 +32,7 @@ def homepage(request):
 	context['currency'] = currency
 	context['callback_url'] = callback_url
 
-	return render(request, 'pay.html', context=context)
+	return render(request, 'pay1.html', context=context)
 
 def succ(request):
     	return render(request, 'paymentsuccess.html')
@@ -45,6 +46,7 @@ def paymenthandler(request):
 
 	# only accept POST request.
 	if request.method == "POST":
+    	
 		try:
 		
 			# get the required parameters from post request.
@@ -61,18 +63,19 @@ def paymenthandler(request):
 			result = razorpay_client.utility.verify_payment_signature(
 				params_dict)
 			if result is not None:
-				amount = 20000 # Rs. 200
-				try:
+					amt = request.session['amt']
+					amount =amt*100  # Rs. 200
+					try:
 
-					# capture the payemt
-					razorpay_client.payment.capture(payment_id, amount)
+						# capture the payemt
+						razorpay_client.payment.capture(payment_id, amount)
 
-					# render success page on successful caputre of payment
-					return render(request, 'paymentsuccess.html')
-				except:
+						# render success page on successful caputre of payment
+						return render(request, 'paymentsuccess.html')
+					except:
 
-					# if there is an error while capturing payment.
-					return render(request, 'paymentfail.html')
+						# if there is an error while capturing payment.
+						return render(request, 'paymentfail.html')
 			else:
 
 				# if signature verification fails.

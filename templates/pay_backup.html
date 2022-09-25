@@ -59,9 +59,9 @@
 </head>
 <body>
 	<div class="card">
-	<h1 class="title">payment time boi </h1>
+	<h1 class="title">payment time  </h1>
 	<small class="muted"
-		>If you like my work, you can support me by donating {{ request.session.description }} </small
+		>If you like my work, you can support me by donating {{ request.session.amt }} </small
 	>
 	<div class="btn_container">
 		<!-- Payment Button -->
@@ -85,7 +85,7 @@
 	currency: "{{ currency }}",
 	
 	// Your/store name.
-	name: "Dj Razorpay",
+	name: "OTT MOdel",
 	
 	// Pass the `id` obtained in the response of Step 1
 	order_id: "{{ razorpay_order_id }}",

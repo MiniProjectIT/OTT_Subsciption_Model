@@ -146,41 +146,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 #
-#
-#
-# def verified_callback(user):
-#     user.is_active = True
-#
-#
-#
-#
-#
-# EMAIL_ACTIVE_FIELD = 'is_active'
-# EMAIL_SERVER = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_ADDRESS = 'hitanshuparekh72@student.sfit.ac.in'
-# EMAIL_PASSWORD = 'hitanshu72'
-# EMAIL_FROM_ADDRESS = 'Tripology@gmail.com'
-# EMAIL_MAIL_SUBJECT = 'Confirm your email'
-# EMAIL_MAIL_HTML = 'mail_body.html'
-# EMAIL_MAIL_PLAIN = 'mail_body.txt'
-# EMAIL_TOKEN_LIFE = 60 * 60
-# EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
-# EMAIL_PAGE_DOMAIN = 'http://mydomain.com/'
-#
-
-
-
-
-
-# EMAIL_VERIFIED_CALLBACK = verified_callback
-# EMAIL_FROM_ADDRESS = 'Tripology@gmail.com'
-# EMAIL_MAIL_SUBJECT = 'Confirm your email'
-# EMAIL_MAIL_HTML = 'mail_body.html'
-# EMAIL_MAIL_PLAIN = 'mail_body.txt'
-# EMAIL_TOKEN_LIFE = 60 * 60
-# EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
-# EMAIL_PAGE_DOMAIN = 'http://mydomain.com/'
 
 
 #SMTP Configuration

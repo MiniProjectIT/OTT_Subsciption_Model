@@ -77,9 +77,9 @@ def destination_details(request,id):
 
 def booking(request, id):
     plans = ott_plans.objects.get(id=id)
-    request.session['description'] = plans.description
-    destinationName = request.session['name']
-    destinationPrice = request.session['price']
+    request.session['amt'] = plans.amt
+    # destinationName = request.session['name']
+    # destinationPrice = request.session['price']
     # print(destinationName)
     # print(destinationPrice)
 
@@ -115,7 +115,7 @@ def receipt(request):
     last_name = request.session.get('lname')
     # print(last_name)
 
-    tour_amount = int(request.session.get('total_amount')) #Per person
+    # tour_amount = int(request.session.get('total_amount')) #Per person
     # print(tour_amount)
     # adults = int(request.session.get('no_of_adults'))
     # print(adults)
@@ -133,7 +133,7 @@ def receipt(request):
     # request.session['total_amount'] =str(totalCost)
 
     # print(totalCost)
-    request.session['total_amount'] = tour_amount
+    # request.session['total_amount'] = tour_amount
 
     today = date.today()
 

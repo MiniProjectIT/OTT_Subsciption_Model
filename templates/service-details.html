@@ -147,7 +147,7 @@
                 <a href="#" class="active">{{plans.f1}}</a>
                 <a href="#">{{plans.f2}}</a>
                 <a href="#">{{plans.f3}}</a>
-                <a href="#">{{plans.f4}}</a>
+                <a href="#">Price- {{plans.amt}}</a>
               </div>
             </div>
 
@@ -169,6 +169,9 @@
                 <li>
                   <i class="bi bi-check-circle"></i> <span>{{plans.f3}}</span>
                 </li>
+                <li>
+                  <i class="bi bi-check-circle"></i> <span>Price- {{plans.amt}}</span>
+                </li>
               </ul>
 
               <p>{{plans.added_desc}}</p>
@@ -180,9 +183,15 @@
                     <div class="submit_btn">
                         <!--                                        <input type="submit" name="submit" class="boxed-btn4" value="Book Here">-->
                         <!--                                        <button class="boxed-btn4" type="submit" href='pessanger_detail'>Book here</button>-->
-                        <button class="boxed-btn4" type="button"
-                            onclick="window.location.href='/booking/{{plans.id}}'">Book
-                            Here</button>
+                        <nav id="navbar" class="navbar">
+                          <ul>
+                        
+                            <li style="margin-left: 300px;margin-top:10px;"><a class="get-a-quote" href="/booking/{{plans.id}}">Buy this Plan</a></li>
+                       
+                        
+                          </ul>
+                        </nav><!-- .navbar -->
+                            
                     </div>
                 </div>
             </div>

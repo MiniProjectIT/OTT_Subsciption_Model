@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/pay.css' %}">
+</head>
+<body>
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://rvs-order-summary-component.netlify.app/images/illustration-hero.svg" alt="">
+            </div>
+            <div class="card-body">
+                <div class="card-title">Payment Portal</div>
+                <div class="card-text">You are just one step behind make the payment and get your daily dose of entertainment</div>
+                <div class="card-plan">
+                    <div class="card-plan-img"><img src="https://rvs-order-summary-component.netlify.app/images/icon-music.svg" alt=""></div>
+                    <div class="card-plan-text">
+                        <div class="card-plan-title">Annual Plan</div>
+                        <div class="card-plan-price">{{ request.session.amt }} INR</div>
+                    </div>
+                    <div class="card-plan-link"><a href="/plans">Change</a></div>
+                </div>
+                <div class="card-payment-button">
+                    <button class="btn" id="pay-btn">Proceed to Payment</button>
+                </div>
+                <div class="card-cancel-button">
+                    <a href="/"> <button >Cancel Order</button></a>
+ 
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+	var options = {
+	
+	// Enter the Key ID generated from the Dashboard
+	key: "{{ razorpay_merchant_key }}",
+	
+	// Amount is in currency subunits.
+	// Default currency is INR. Hence,
+	// 50000 refers to 50000 paise
+	amount: "{{ razorpay_amount }}",
+	currency: "{{ currency }}",
+	
+	// Your/store name.
+	name: "OTT Model",
+	
+	// Pass the `id` obtained in the response of Step 1
+	order_id: "{{ razorpay_order_id }}",
+	callback_url: "{{ callback_url }}",
+	};
+	
+	// initialise razorpay with the options.
+	var rzp1 = new Razorpay(options);
+	
+	// add event listener to the payment button.
+	document.getElementById("pay-btn").onclick = function (e) {
+	rzp1.open();
+	e.preventDefault();
+	};
+</script>
+</html>
