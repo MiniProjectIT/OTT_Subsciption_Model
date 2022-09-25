@@ -176,9 +176,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" value={% if request.session.price %}
-                                               {{request.session.price}}
-                                               {% endif %}
+                                        <input class="form-control" type="text" value= "{{ request.session.description }}"
+
+                                              
                                                name="totalAmount" readonly/>
                                         <span class="form-label"></span>
                                     </div>

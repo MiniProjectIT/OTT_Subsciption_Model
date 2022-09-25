@@ -76,6 +76,8 @@ def destination_details(request,id):
 
 
 def booking(request, id):
+    plans = ott_plans.objects.get(id=id)
+    request.session['description'] = plans.description
     destinationName = request.session['name']
     destinationPrice = request.session['price']
     # print(destinationName)
@@ -86,14 +88,14 @@ def booking(request, id):
         
         email = request.POST['email']
         phoneNo = request.POST['phoneNo']
-        totalAmount = int(request.POST['totalAmount'])
+        
 
         request.session['fname'] = firstName
     
         request.session['email'] = email
         request.session['phone_no'] = phoneNo
-        request.session['total_amount'] = totalAmount
 
+        
       
 
         # print("No of rooms = ", noOfRooms)
@@ -103,10 +105,11 @@ def booking(request, id):
         # book.save()
         return redirect('receipt')
     else:
-        return render(request, 'booking.html')
+        return render(request, 'booking.html',{'plans':plans})
 
 @login_required(login_url='/accounts/login')
 def receipt(request):
+    
     first_name = request.session.get('fname')
     # print(first_name)
     last_name = request.session.get('lname')
@@ -136,7 +139,7 @@ def receipt(request):
 
     t = time.localtime()
     currentTime = time.strftime("%H:%M:%S", t)
-    return render(request,'receipt.html',{ 'date':today, 'currentTime':currentTime})
+    return render(request,'receipt.html',{ 'date':today, 'currentTime':currentTime  })
 
 
 
@@ -183,7 +186,7 @@ def confirm_booking(request):
 
         # print("User Added")
 
-        return redirect('/')
+        return redirect('/payment/pay')
     else:
         return render(request,'booking.html')
 
@@ -219,8 +222,11 @@ def plans(request):
     plans= ott_plans.objects.all().order_by('-createdTime')
     return render(request, 'services.html', {'plans':plans})
 
-def single_ott(request, ott_url):
-    if ott_plans.objects.filter(url=ott_url).exists():
-        return render(request, "service-details.html", {"plans": ott_plans.objects.get(url=ott_url)})
-    else:
-        raise Http404("No such Event exists")
+def single_ott(request, id):
+    plans = ott_plans.objects.get(id=id)
+    return render(request,'service-details.html',{'plans':plans})
+
+    # if ott_plans.objects.filter(id=id).exists():
+    #     return render(request, "service-details.html", {"plans": ott_plans.objects.get(id=id)})
+    # else:
+    #     raise Http404("No such Event exists")

@@ -12,7 +12,7 @@ razorpay_client = razorpay.Client(
 
 def homepage(request):
 	currency = 'INR'
-	amount = 20000 # Rs. 200
+	amount = 60000 # Rs. 200
 
 	# Create a Razorpay Order
 	razorpay_order = razorpay_client.order.create(dict(amount=amount,
