@@ -9,7 +9,7 @@ urlpatterns = [
     path('services_d', views.services_d, name="services_d"),
     path('test', views.test, name="test"),
     path("e/<int:id>/", views.single_ott, name="plans"),
-
+    path('planbuy', views.planbuy, name="planbuy"),
     path('contact', views.contact, name="contact"),
     path('destination_details/<int:id>', views.destination_details, name='destination_details'),
     path('booking/<int:id>', views.booking, name="booking"),

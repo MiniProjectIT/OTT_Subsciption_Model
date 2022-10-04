@@ -18,6 +18,9 @@ from django.http import Http404
 def index(request):
     return render(request, 'index.html')
 
+def planbuy(request):
+    return render(request, 'planbuy.html')
+
 def services(request):
     net= netflix.objects.all().order_by('-createdTime')
     ama = amazon.objects.all().order_by('-createdTime')

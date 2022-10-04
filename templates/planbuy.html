@@ -116,13 +116,8 @@
           <div class="container position-relative">
             <div class="row d-flex justify-content-center">
               <div class="col-lg-6 text-center">
-                <h2>Service Details</h2>
-                <p>
-                  Odio et unde deleniti. Deserunt numquam exercitationem.
-                  Officiis quo odio sint voluptas consequatur ut a odio
-                  voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
-                  ratione sint. Sit quaerat ipsum dolorem.
-                </p>
+                <h2>Plan Details</h2>
+                
               </div>
             </div>
           </div>
@@ -144,37 +139,28 @@
           <div class="row gy-4">
             <div class="col-lg-4">
               <div class="services-list">
-                <a href="#" class="active">{{plans.f1}}</a>
-                <a href="#">{{plans.f2}}</a>
-                <a href="#">{{plans.f3}}</a>
-                <a href="#">Price- {{plans.amt}}</a>
+                <a href="#" class="active">Plan - Netflix Combo</a>
+                <a href="#">Validity - 1 year</a>
+                <a href="#">Univeral login key - hsxhxvgvxhbsnxsx</a>
+                <a href="#">Price- 999</a>
               </div>
             </div>
 
             <div class="col-lg-8">
-              <img
-                src="{{plans.images.url}}"
-                alt=""
-                class="img-fluid services-img"
-              />
-              <h3>{{plans.name}}</h3>
+              <img style="max-width: 70%;" src="{% static 'assets/img/stream.jpg' %}" alt="" class="img-fluid services-img">
+              <h3>Plan - Netflix Combo</h3>
 
               <ul>
                 <li>
-                  <i class="bi bi-check-circle"></i> <span>{{plans.f1}}</span>
+                  <i class="bi bi-check-circle"></i> <span>Validity - 1 year</span>
                 </li>
                 <li>
-                  <i class="bi bi-check-circle"></i> <span>{{plans.f2}}</span>
+                  <i class="bi bi-check-circle"></i> <span>Univeral login key - hsxhxvgvxhbsnxsx</span>
                 </li>
-                <li>
-                  <i class="bi bi-check-circle"></i> <span>{{plans.f3}}</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle"></i> <span>Price- {{plans.amt}}</span>
-                </li>
+                
               </ul>
 
-              <p>{{plans.added_desc}}</p>
+           
 
               
 
@@ -186,7 +172,7 @@
                         <nav id="navbar" class="navbar">
                           <ul>
                         
-                            <li style="margin-left: 300px;margin-top:10px;"><a class="get-a-quote" href="/booking/{{plans.id}}">Buy this Plan</a></li>
+                            <li style="margin-left: 300px;margin-top:10px;"><a class="get-a-quote" href="/booking/{{plans.id}}">Cancel this Plan</a></li>
                        
                         
                           </ul>
@@ -212,11 +198,7 @@
             <a href="index.html" class="logo d-flex align-items-center">
               <span>Logis</span>
             </a>
-            <p>
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
-            </p>
+            
             <div class="social-links d-flex mt-4">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
