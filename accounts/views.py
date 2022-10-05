@@ -82,7 +82,7 @@ def register(request):
 
                 message = render_to_string('mail_body.html', {'first_name':first_name, 'activate_url':activate_url})
                 msg = EmailMessage(
-                    'Tripology',
+                    'OTT Subscription Model',
                     message,
 
                     settings.EMAIL_HOST_USER,

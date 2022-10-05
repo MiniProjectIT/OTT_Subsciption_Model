@@ -177,7 +177,7 @@ def confirm_booking(request):
         message = render_to_string('order_placed_body.html', {'fullName':fullName,'email':email ,'phoneNo':phoneNo})
         
         msg = EmailMessage(
-            'Tripology',
+            'OTT Subscription Model',
             message,
             settings.EMAIL_HOST_USER,
             [request.user.email]
@@ -207,7 +207,7 @@ def delete_destination(request, id):
 
         message = render_to_string('order_cancel_body.html', {'orderId':id})
         msg = EmailMessage(
-            'Tripology',
+            'OTT Subscription Model',
             message,
             settings.EMAIL_HOST_USER,
             [request.user.email]
