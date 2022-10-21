@@ -44,8 +44,14 @@ python manage.py runserver
 4. To stop the Server you can use Ctrl+C  in the command prompt
 
 ## Architecture
+<p align="center">
+  <a href="/">
+    <img src="https://user-images.githubusercontent.com/83024561/197261904-7c925dfd-e6ca-4eb8-98ad-fb48ccfef386.png"
+         alt="csi_logo" width="500" height="500">
+  </a>
+</p>
 
-![image](https://user-images.githubusercontent.com/83024561/197261904-7c925dfd-e6ca-4eb8-98ad-fb48ccfef386.png)
+
 
 ## UI Screenshots
 
@@ -66,8 +72,10 @@ python manage.py runserver
 ![image](https://user-images.githubusercontent.com/83024561/197262777-9f3ffa17-bb39-4009-9cf4-4459afee62de.png)
 
 5. Receipt Page
-
-![image](https://user-images.githubusercontent.com/83024561/197262882-02ca90ea-5931-4dc5-8d8b-c910eb9d6b20.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/83024561/197262882-02ca90ea-5931-4dc5-8d8b-c910eb9d6b20.png"
+         alt="csi_logo" width="500" height="500">
+</p>
 
 6. Payment Portal 
 
