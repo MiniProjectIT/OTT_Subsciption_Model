@@ -28,7 +28,7 @@ Here are the steps to follow to run this on you PC:
 
 1. Clone the repository
 ```
-https://github.com/vedantkadam/mychat_app.git
+https://github.com/MiniProjectIT/OTT_Subsciption_Model.git
 ```
 
 2. If you have some modules missing type this command in terminal.
