@@ -2,6 +2,7 @@
 
 - We propose a combined i.e. aggregated subscription model where the customer does not have to hassle with multiple different subscription services while undercutting their prices by a large margin.
 - Provides the user with a sleek user experience and UI. The project aims to delivers services to a customer at a competitive price point.
+- Check out the live Deployment at - [Click Me!!](https://ottsubs.herokuapp.com/) 
 
 ## Features
 
