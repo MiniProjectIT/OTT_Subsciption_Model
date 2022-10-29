@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_email_verification', 
     'payment',
+    
     ]
 
 MIDDLEWARE = [
