@@ -9,3 +9,4 @@ admin.site.register(ott_plans)
 admin.site.register(netflix)
 admin.site.register(amazon)
 admin.site.register(hotstar)
+
