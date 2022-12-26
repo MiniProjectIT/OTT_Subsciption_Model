@@ -100,3 +100,8 @@ python manage.py runserver
   <img src="https://user-images.githubusercontent.com/83024561/197263556-f6ef183c-4886-4e4d-a291-dcfdf6c22a77.png"
          alt="csi_logo" width="700" height="400">
 </p>
+
+
+## Project Demo
+
+https://user-images.githubusercontent.com/83024561/209547567-d661216c-b1ff-4830-a05e-d2dfd061bb62.mp4
